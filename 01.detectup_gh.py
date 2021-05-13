@@ -68,6 +68,6 @@ plt.savefig(image_stream)
 image_stream.seek(0)
 
 # upload in blob storage
-container_client = ContainerClient.from_container_url("https://01facetest.blob.core.windows.net/quickstart2578d35b-e0f0-4c75-905a-62fbc7d3def0?sp=rw&st=2021-05-12T02:41:53Z&se=2021-05-12T10:41:53Z&skoid=20f6bc0d-d946-42b5-ba49-5dffca5ee19a&sktid=159f3555-6979-4668-a816-ea83e6f9f9be&skt=2021-05-12T02:41:53Z&ske=2021-05-12T10:41:53Z&sks=b&skv=2020-02-10&spr=https&sv=2020-02-10&sr=c&sig=uvlZ0UYJu0bu2clTSUakrE73z3j93INmKLLfPVHTXYc%3D")
+container_client = ContainerClient.from_container_url("your_container_SASconnection_string")
 blob_client = container_client.get_blob_client(blob ="001.jpg")
 blob_client.upload_blob(image_stream.read(), blob_type="BlockBlob")
